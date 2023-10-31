@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>PaperFree检测报告手机版</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<style>
+    .user-box {
+        margin: .6rem .5rem;
+        border: 1px solid;
+    }
+    .user-box p {
+        font-size: 0.6rem;
+        margin-top: 0;
+    }
+</style>
+
+<body>
+    <div class="content-box">
+        <div class="title-box">
+            <h4>
+                <a href="./index.htm">
+                    <span class="mui-icon mui-icon-back"></span>返回
+                </a>相似来源
+            </h4>
+        </div>
+        <div class="article-box">
+            <p>您的语句：
+                <span style="color: red;">${senResult.sentence}
+                </span>
+            </p>
+            <p>共找出相似内容：
+                <span>${senResult.simResultList?size}</span>个</p>
+        </div>
+        <div class="user-box similarity-box">
+        	<#list senResult.simResultList as simResult>
+            <p>
+                <i>${simResult_index+1}</i><span style="float: right;">相似度：<span style="color: red;">${(simResult.simDegree*100)?string("0.##")}%</span></span>
+            </p>
+            <p>相似内容片段：</p>
+            <p class="content-paper">
+                ${simResult.simSegment}
+            </p>
+            <#if simResult.source == 0>
+            <p>来源(互联网资源)</p>
+            <p>标题：<span>${simResult.title}</span></p>
+            <p>链接：<span><a target='_blank' href="${simResult.publisher}">${simResult.displayUrl}</a></span></p>
+            <#elseif simResult.source == 3>
+            <p>来源(PaperFree云论文库)</p>
+            <p>标题：<span>${simResult.title}</span></p>
+            <p>链接：<span><a target='_blank' href="${simResult.publisher}">${simResult.displayUrl}</a></span></p>
+            <#elseif  simResult.source == 1>
+            <p>来源(本地数据库)</p>
+            <p>篇名：<span>《${simResult.title}》</span></p>
+            <p>期刊：<span>《${simResult.publisher}》</span></p>
+            <p>年份：<span>${simResult.year}</span></p>
+            <p>作者：<span>${simResult.author}</span></p>
+            <#elseif  simResult.source == 2>
+            <p>来源(本地数据库)</p>
+            <p>篇名：<span>《${simResult.title}》</span></p>
+            <p>期刊：<span>《${simResult.publisher}》</span></p>
+            <p>年份：<span>${simResult.year}</span></p>
+            <p>作者：<span>${simResult.author}</span></p>
+            </#if> 
+
+          </#list>
+        </div>
+        <div class="user-box similarity-box">
+            <h4 style="color: green;font-weight: 500;">该句修改建议</h4>
+            <#list senResult.synonymList as syn>
+            	<p><span>${syn}</span></p>
+            </#list>
+        </div>
+    </div>
+    <div class="foot-box">
+        检测报告由PaperFree文献相似度检测系统生成
+    </div>
+</body>
+<script>
+</script>
+
+</html>

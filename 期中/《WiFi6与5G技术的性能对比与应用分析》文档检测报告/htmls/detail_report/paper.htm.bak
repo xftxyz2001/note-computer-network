@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="robots" content="nofollow"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>PaperFree 最权威中文论文抄袭检测系统</title>
+<style type="text/css">
+<!--
+user_icon {
+color: #FFFFFF;
+}
+html
+{
+overflow-x:hidden;
+overflow-y:auto;
+}
+body,td,th {
+font-family: "微软雅黑";
+font-size: 12px;
+}
+h1,h2,h3,h4,h5,h6 {
+font-family: "宋体";
+}
+p{
+margin-bottom:10px;
+}
+demo_padding {
+line-height: 30px;
+}
+.zhengwen {
+padding-right: 15px;
+padding-left: 5px;
+padding-bottom:100px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+}
+.zhengwencenter {
+padding-right: 15px;
+padding-left: 0px;
+margin-bottom:10px;
+font-size: 13px;
+line-height: 20px;
+color: #666666;
+text-align:center
+}
+.neikuang {
+background-color: #EBEBEB;
+border: 1px solid #999999;
+padding-right: 10px;
+padding-left: 10px;
+margin-top:10px;
+margin-left:25px;
+width:300px;
+}
+.shubu{
+height: 20px;
+width: 20px;
+margin-left:25px;
+background-color: #FFFFFF;
+border: 1px solid #999999;
+text-align: center;
+vertical-align: middle;
+display: block;
+color: #666666;
+}
+a.red:link {color:#FF0000}
+a.red:visited {color:#FF0000}
+a.red:hover {color:#000000}
+a.red:active {color:#000000}
+
+a.orange:link {color:#FF9900}
+a.orange:visited {color:#FF9900}
+a.orange:hover {color:#000000}
+a.orange:active {color:#000000}
+
+a.dark:link {color:#666666}
+a.dark:visited {color:#666666}
+a.dark:hover {color:#000000}
+a.dark:active {color:#000000}
+
+a.pagelink:hover {color:#000000}
+a.pagelink:active {color:#000000}
+
+.green{color:#008000}
+.gray{color:#666666}
+span.gray:hover {color:#000000}
+
+.red{color:#FF0000}
+span.red:hover {color:#000000}
+.orange{color:#FF9900}
+span.orange:hover {color:#000000}
+
+a{TEXT-DECORATION:none}
+a:hover{TEXT-DECORATION:underline;}
+.conNum1{padding:0 5px;height:20px;border:1px solid #ccc;}
+.paper .autotype3{color:#FF0000;}
+.paper .autotype2{color:#FFA500;}
+-->
+</style>
+<script type="text/javascript" src="jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<div class="zhengwen">
+		<#list paragraphs as p>
+    		<p style="margin:2px">${p}</p>
+    	</#list>
+    </div>
+
+<div class="zhengwencenter">
+<p>
+检测报告由<a href="http://www.paperfree.cn" target="_blank">PaperFree</a>文献相似度检测系统生成
+</p>
+</div>
+<div style="margin-bottom:100px"></div>
+<!--增加的代码------------------开始-->
+
+<style type="text/css">
+  div[align=right] *{
+	cursor:pointer;
+	-webkit-user-select: none;
+    -moz-user-select: none;
+  	-ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+ }
+ 
+ div[align=right] input[type=button]{
+	cursor:pointer;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACA0lEQVQ4T6WSTWgTURDH//M2xRSlfmASU0S9iD3UD4xxAyoaRBTbbA+CHqS9CF48KwgKHtpLpRWP3kShBw9Cto1eBL0ou6kFv1IRoaKINBsoVASp5u04u1rZJumh9F3e7jzmN///zBBWeSia/7ln98a40X5NQR2ReBcDH+V+gboeSj6anG1V6z/AK5iHofCAQGlJ/EnMM3LvIKK1kjgH9gcSdrnUCAkBn47t27CuI14B8WYwXX1qO7fPAvoGoC5ZuQtMGCWwXviF7q2P3a9RSAioWeYwiC777F9J2eWbjVWqBbNfKboH8P1E0R1oBXCYaE9l3unIP0O9lddan/mFmRaStrOzBSD3PWiYPGaWG4rXZ5ZE7ql38+6aaJHQgmeZr4iwXeRtkl9hNR8BfJD+/GgsstiDO9KDi1r757dMlMca02d7s8cNw3jCzINJ273eZOFbIbOtjWJvAdKA3x8dV62QPQoyxkDo9BlnUrbzsAkQ2ujNnZM9uCtW4lLptcy/Im52iaH9oi5UyoyaZp1Pj0/K29+zZBNFSVdMxUYkeEie1gtoRgATDJ4mpW5JvF0a5GlwPl10p5sAEWnknc6mousb9EEZxngIYa7WNeU7S877JQqWG+FivGqZJ2TV7X8230hD964IEICqPQdPqpgKJvU8UXSsFQMCyMtMpu3A1NTv4PsPZS3CEUoK/vQAAAAASUVORK5CYII=') no-repeat scroll center center transparent !important;
+	border: none;
+	width: 16px;
+	margin-right: 2px;
+	outline:0 !important;
+ }
+ 
+ div.gcView{
+ 	clear:both;
+ }
+ div.gcView:after{
+ 	content:'';
+ 	display:block;
+ 	clear:both;
+ }
+</style>
+<script type="text/javascript">
+$(function () {
+	
+	var docCheckId = "${docId}";
+	
+	var gcUrl = "${gcUrl}";
+
+    $("div[align=right]>*").click(function(e){
+        var $this = $(this);
+
+        if($(e.target).is(":not(input)")){
+            $this.closest("div").find("input").click();
+        }
+    });
+	
+	var partContent = "";
+	window.submitPart = function (_partContent) {
+	 	partContent = _partContent;
+	}
+	
+	$("div[align=right] input").click(_delay(function(e){
+		 var $this = $(this);
+        var $right = $this.closest("div[align=right]");
+        var $gcView = $right.data("gcView");
+
+        if (!$gcView) {
+            $gcView = $("<div class='gcView' />").hide().insertAfter($right);
+            $right.data("gcView", $gcView);
+
+            var $form = $("<form target='_blank' method='post' />").appendTo($gcView).attr("action", gcUrl+"");
+            $("<input type='hidden' name='docCheckId' />").appendTo($form).val(docCheckId+"");
+            
+            $("<p>改重内容（请对本段修改之后，点击“提交片段检测”，然后在“降重结果”页面中获取实时检测结果）：</p>").css({
+                "color": "#666",
+                "margin": ".5em 0 3px 0",
+                "font": "99% 'Helvetica Neue', Arial, Helvetica, san-serif"
+            }).appendTo($form);
+
+            $('<textarea name="content" rows="10" cols="20" id="paper_content" style="width:99%" value=""></textarea>').css({
+                "color": "#000",
+                "padding": ".3em",
+                "float": "none",
+                "margin-bottom": ".1em",
+                "font": "99% 'Helvetica Neue', Arial, Helvetica, san-serif"
+            }).appendTo($form);
+
+            $('<p><input type="submit" name="Submit" value="提交片段检测" /></p>').css({
+                "padding": "0 0px 0px 0",
+                "text-align": "right"
+            }).appendTo($form);
+
+            $gcView.find("textarea").val(partContent);
+
+            $form.submit(function(){
+                $(this).parent().slideUp("fast");
+            });
+        }
+
+        if ($gcView.is(":animated")) {
+        } else if ($gcView.is(":visible")) {
+            $gcView.slideUp("fast");
+        } else {
+            $gcView.slideDown("fast").promise().done(function () {
+                $(this).find("textarea").focus();
+            });
+        }
+
+        return false;
+	}, 10));
+	
+	function _delay(callback, time){
+		return function(e){
+			var _this = this;
+			setTimeout(function(){
+			   callback.call(_this, e);
+			   _this = null;
+			}, time);
+		}
+	}
+});
+</script>
+
+<!--增加的代码------------------结束-->
+
+</body>
+</html>

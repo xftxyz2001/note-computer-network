@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<title>PaperFree检测报告手机版</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<style>
+	.user-box {
+		margin: .6rem .5rem;
+		border: 1px solid;
+	}
+	.user-box p {
+		font-size: 0.6rem;
+		margin-top: 0.3rem;
+	}
+</style>
+
+<body>
+	<div class="content-box">
+		<div class="title-box">
+			<h4>
+				<a href="./index.htm">
+					<span class="mui-icon mui-icon-back"></span>返回</a>综合评估</h4>
+		</div>
+		<div class="user-box">
+			<h4>${docResult.title}</h4>
+			<p class="pg-box">论文作者：
+				<span>${docResult.authors}</span>
+				<a href="./index.htm">详细报告</a>
+			</p>
+			<p>提交时间：
+				<span>${docResult.submitTime?string('yyyy-MM-dd HH:mm:ss')}</span>
+			</p>
+			<p>总相似度：
+				<span>${(similar*100)?string("0.##")}%</span>
+				
+			</p>
+			<p>论文字数：
+				<span>${docResult.totalChar}</span>&nbsp;&nbsp;检测字数：
+				<span>${docResult.checkChar}</span>&nbsp;&nbsp;相似字数：
+				<span>${docResult.copyChar}</span>
+			</p>
+			<p>检测范围：学术期刊，学位论文，会议论文，互联网，英文数据库（涵盖期刊，硕博，会议的英文数据）。</p>
+			<p>报告编号：
+				<span>${reportId}</span>
+			</p>
+			<h4 class="zs-box">报告注解</h4>
+			<p>总体相似度 = 相似字数 / 检测字数</p>
+			<p>被系统自动识别出来的非正文部分（如目录，标题，公式，图表，参考文献等）不参与检测，检测字数一般略小于论文字数。</p>
+			<p>相似字数 =（句子1字数 * 句子1相似度 + 句子2字数 * 句子2相似度 + ...... + 句子n字数 * 句子n相似度），句子相似度范围0.00~1.00，绿色句子相似度按照0计算。</p>
+			<p>红色句子为重度相似(80%~100%)，建议修改；橙色句子为轻度相似(50%~80%)，可酌情修改；绿色句子表示没有检测到相似语句。</p>
+		</div>
+		<div class="user-box similarity-box">
+			<h4>相似资源（学术期刊，学位论文，会议论文等本地数据库资源）</h4>
+			<#list localPageList as localPage>
+			<p>
+				<i>${localPage_index+1}</i>
+				<span>${(localPage.similar*100)?string("0.00")}%</span>&nbsp;&nbsp;来源：
+				<span>本地数据库《${localPage.publisher}》${localPage.year}年</span>&nbsp;&nbsp;作者：
+				<span>${localPage.author}</span>&nbsp;&nbsp;篇名：
+				<span>《${localPage.title}》</span>
+			</p>
+			</#list>
+		</div>
+		<div class="user-box similarity-box">
+			<h4>相似资源（百度文库，豆丁文库，博客，新闻网站等互联网资源）</h4>
+			<#list netPageList as netPage>
+			<p>
+				<i>${netPage_index+1}</i>
+				<span>${(netPage.similar*100)?string("0.00")}%</span>&nbsp;&nbsp;来源：
+				<span>互联网资源 </span>&nbsp;&nbsp;标题：
+				<span>${netPage.title}</span>
+				<a href="${netPage.publisher}" target="_blank">&nbsp;&nbsp;查看来源</a>
+			</p>
+			</#list>
+		</div>
+
+	</div>
+	<div class="foot-box">
+		检测报告由PaperFree文献相似度检测系统生成
+	</div>
+</body>
+<script>
+</script>
+
+</html>
